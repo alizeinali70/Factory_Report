@@ -1,0 +1,117 @@
+﻿@model IEnumerable<Report.Models.db_data>
+
+@{
+    ViewData["Title"] = "ریز گزارش تولید";
+}
+
+
+<div class="direction-rtl">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="table-responsive table--no-card m-b-30">
+                        <table class="table table-borderless table-data3 table-striped text-center">
+                            <thead>
+                                <tr>
+                                    <th>ردیف</th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.tar_f)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.devices.dev_name)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.kalas.kala)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.kalas.model)
+                                    </th>                                    
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.tedad)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.tedad_scrap)
+                                    </th>                                    
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.time_mm)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.time_hh)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.time_sleep)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.shift)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.model_shift)
+                                    </th>
+                                    
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.devices.Operator)
+                                    </th>
+
+
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{ int Index = 1;}
+                                @foreach (var item in Model)
+                                {
+                                <tr>
+                                    <td>
+                                        <label>@Index</label>
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.tar_f)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.devices.dev_name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.kalas.kala)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.kalas.model)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.tedad)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.tedad_scrap)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.time_mm)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.time_hh)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.time_sleep)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.shift)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.model_shift)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.devices.Operator)
+                                    </td>                                    
+                                </tr>
+                                    Index++;
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

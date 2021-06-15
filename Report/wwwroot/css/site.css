@@ -1,0 +1,32 @@
+﻿.direction-rtl{
+    direction:rtl;
+    text-align:right;
+}
+.margin-top-78{
+    margin-top:78px;
+}
+.margin-top-20{
+    margin-top:20px;
+}
+.background {
+    background-image: url(../assets/images/bg-title-01.jpg);
+}
+.background1 {
+    background-image: url(../assets/images/bg-title-02.jpg);
+}
+th,td{
+    text-align:center;
+    padding:0 !important;
+}
+.font{
+    font-family:'IRANSansWeb(FaNum)'!important;
+    
+}
+.pointer{
+    cursor:pointer;
+}
+a {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: transparent;
+}
