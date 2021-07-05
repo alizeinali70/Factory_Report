@@ -5,6 +5,7 @@ using Report.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -59,9 +60,18 @@ namespace Report.Controllers
 
         public IActionResult Tolid_Details()
         {
+          
             var tolid = _homeInterface.FindAll().ToList();
             
             return View(tolid);
+        }
+        public IActionResult Search(string from)
+        {
+            string persianDate = from;
+            PersianCalendar pc = new PersianCalendar();
+           // DateTime PersianDate = PersianDateTime.Parse(persianDate);
+
+            return Redirect(nameof(Index));
         }
 
         public IActionResult Tolid_Device()
