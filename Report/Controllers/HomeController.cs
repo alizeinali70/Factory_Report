@@ -84,5 +84,12 @@ namespace Report.Controllers
 
             return View(tolid);
         }
+        public IActionResult Search(string from,string to)
+        {
+           // from = "1400/02/02";
+            var tolid = _homeInterface.FindAll().Where(x => x.tar_f == from);
+
+            return View("Tolid_Details",tolid.ToList());
+        }
     }
 }
