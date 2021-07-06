@@ -20,13 +20,12 @@ namespace Report.Repositories
         {
             FindAllDevices();
             FindAllKalas();
-            //var Tolid = _db.db_data.ToList();
             var Tolid = _db.db_data.ToList();
             return Tolid;
         }
 
         public ICollection<tb_device> FindAllDevices()
-        {   
+        {
             var Devices = _db.tb_device.ToList();
             return Devices;
         }

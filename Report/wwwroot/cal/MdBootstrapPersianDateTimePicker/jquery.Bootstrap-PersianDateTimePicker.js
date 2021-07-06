@@ -417,12 +417,12 @@
     }
 
     function getDateTimeString(dateTimeInJsonFormat, enableTimePicker, isEnglishNumber) {
-        var yearString = isEnglishNumber ? zeroPad(dateTimeInJsonFormat.Year) : toPersianNumber(zeroPad(dateTimeInJsonFormat.Year)),
-            monthString = isEnglishNumber ? zeroPad(dateTimeInJsonFormat.Month) : toPersianNumber(zeroPad(dateTimeInJsonFormat.Month)),
-            dayString = isEnglishNumber ? zeroPad(dateTimeInJsonFormat.Day) : toPersianNumber(zeroPad(dateTimeInJsonFormat.Day)),
-            hourString = isEnglishNumber ? zeroPad(dateTimeInJsonFormat.Hour) : toPersianNumber(zeroPad(dateTimeInJsonFormat.Hour)),
-            minuteString = isEnglishNumber ? zeroPad(dateTimeInJsonFormat.Minute) : toPersianNumber(zeroPad(dateTimeInJsonFormat.Minute)),
-            secondString = isEnglishNumber ? zeroPad(dateTimeInJsonFormat.Second) : toPersianNumber(zeroPad(dateTimeInJsonFormat.Second)),
+        var yearString = isEnglishNumber ? zeroPad(dateTimeInJsonFormat.Year) : toEnglishNumber(zeroPad(dateTimeInJsonFormat.Year)),
+            monthString = isEnglishNumber ? zeroPad(dateTimeInJsonFormat.Month) : toEnglishNumber(zeroPad(dateTimeInJsonFormat.Month)),
+            dayString = isEnglishNumber ? zeroPad(dateTimeInJsonFormat.Day) : toEnglishNumber(zeroPad(dateTimeInJsonFormat.Day)),
+            hourString = isEnglishNumber ? zeroPad(dateTimeInJsonFormat.Hour) : toEnglishNumber(zeroPad(dateTimeInJsonFormat.Hour)),
+            minuteString = isEnglishNumber ? zeroPad(dateTimeInJsonFormat.Minute) : toEnglishNumber(zeroPad(dateTimeInJsonFormat.Minute)),
+            secondString = isEnglishNumber ? zeroPad(dateTimeInJsonFormat.Second) : toEnglishNumber(zeroPad(dateTimeInJsonFormat.Second)),
             selectedDateTimeString = yearString + '/' + monthString + '/' + dayString;
         if (enableTimePicker)
             selectedDateTimeString = selectedDateTimeString + '  ' + hourString + ':' + minuteString + ':' + secondString;
@@ -443,7 +443,7 @@
             currentYear = persianTodayDateTemp[0],
             currentMonth = persianTodayDateTemp[1],
             currentDay = persianTodayDateTemp[2],
-            todayDateTimeString = 'امروز، ' + getPersianWeekDay(persianTodayDateTemp[3] + 1) + ' ' + toPersianNumber(currentDay) + ' ' + getPersianMonth(currentMonth) + ' ' + toPersianNumber(currentYear),
+            todayDateTimeString = 'امروز، ' + getPersianWeekDay(persianTodayDateTemp[3] + 1) + ' ' + toEnglishNumber(currentDay) + ' ' + getPersianMonth(currentMonth) + ' ' + toEnglishNumber(currentYear),
             $calendarMainTable = $('<table class="table table-striped" />'),
             $calendarHeader = $('<tr><td colspan="100" style="padding:5px;"><table class="table" data-name="Md-PersianDateTimePicker-HeaderTable"><tr><td><button type="button" class="btn btn-default btn-xs" title="سال بعد" data-name="Md-PersianDateTimePicker-NextYear">&lt;&lt;</button></td><td><button type="button" class="btn btn-default btn-xs" title="ماه بعد" data-name="Md-PersianDateTimePicker-NextMonth">&lt;</button></td><td><div class="dropdown" style="min-width:50px;"><button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuPersianYear" data-toggle="dropdown" aria-expanded="true" data-name="Md-PersianDateTimePicker-TitleYear">1393</button><ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuPersianYear"><li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)" data-name="Md-PersianDateTimePicker-YearNumber">1394</a></li></ul></div></td><td ><div class="dropdown" style="min-width:73px;"><button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuPersianMonths" data-toggle="dropdown" aria-expanded="true" data-name="Md-PersianDateTimePicker-TitleMonth">نام ماه</button><ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuPersianMonths"><li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)" data-name="Md-PersianDateTimePicker-MonthName" data-MonthNumber="1">فروردین</a></li><li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)" data-name="Md-PersianDateTimePicker-MonthName" data-MonthNumber="2">اردیبهشت</a></li><li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)" data-name="Md-PersianDateTimePicker-MonthName" data-MonthNumber="3">خرداد</a></li><li role="presentation" class="divider"></li><li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)" data-name="Md-PersianDateTimePicker-MonthName" data-MonthNumber="4">تیر</a></li><li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)" data-name="Md-PersianDateTimePicker-MonthName" data-MonthNumber="5">مرداد</a></li><li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)" data-name="Md-PersianDateTimePicker-MonthName" data-MonthNumber="6">شهریور</a></li><li role="presentation" class="divider"></li><li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)" data-name="Md-PersianDateTimePicker-MonthName" data-MonthNumber="7">مهر</a></li><li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)" data-name="Md-PersianDateTimePicker-MonthName" data-MonthNumber="8">آبان</a></li><li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)" data-name="Md-PersianDateTimePicker-MonthName" data-MonthNumber="9">آذر</a></li><li role="presentation" class="divider"></li><li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)" data-name="Md-PersianDateTimePicker-MonthName" data-MonthNumber="10">دی</a></li><li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)" data-name="Md-PersianDateTimePicker-MonthName" data-MonthNumber="11">بهمن</a></li><li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)" data-name="Md-PersianDateTimePicker-MonthName" data-MonthNumber="12">اسفند</a></li></ul></div></td><td><button type="button" class="btn btn-default btn-xs" title="ماه قبل" data-name="Md-PersianDateTimePicker-PreviousMonth">&gt;</button></td><td><button type="button" class="btn btn-default btn-xs" title="سال قبل" data-name="Md-PersianDateTimePicker-PreviousYear">&gt;&gt;</button></td></tr></table></td></tr><tr data-name="Md-PersianDateTimePicker-WeekDaysNames"><td>ش</td><td>ی</td><td>د</td><td>س</td><td>چ</td><td>پ</td><td class="text-danger">ج</td></tr>'),
             $calendarTimePicker = $('<tr><td colspan="100" style="padding: 2px;"><table class="table" data-name="Md-PersianDateTimePicker-TimePicker"><tr><td><input type="text" class="form-control" data-name="Clock-Hour" maxlength="2" /></td><td>:</td><td><input type="text" class="form-control" data-name="Clock-Minute" maxlength="2" /></td><td>:</td><td><input type="text" class="form-control" data-name="Clock-Second" maxlength="2" /></td></tr></table></td></tr>'),
@@ -465,7 +465,7 @@
         $yearDropDown.html('');
 
         for (var k = currentYear - 5; k <= currentYear + 5; k++) {
-            var $dropDownYear = $('<li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)" data-name="Md-PersianDateTimePicker-YearNumber">' + toPersianNumber(k) + '</a></li>');
+            var $dropDownYear = $('<li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)" data-name="Md-PersianDateTimePicker-YearNumber">' + toEnglishNumber(k) + '</a></li>');
             if (k == currentYear)
                 $dropDownYear.addClass('bg-info');
             $yearDropDown.append($dropDownYear);
@@ -515,7 +515,7 @@
         // مثال: دی 1393
         var persianMonthName = getPersianMonth(dateTimeInJsonFormat.Month);
         $calendarHeader.find('[data-name="Md-PersianDateTimePicker-TitleMonth"]').html(persianMonthName);
-        $calendarHeader.find('[data-name="Md-PersianDateTimePicker-TitleYear"]').html(toPersianNumber(dateTimeInJsonFormat.Year));
+        $calendarHeader.find('[data-name="Md-PersianDateTimePicker-TitleYear"]').html(toEnglishNumber(dateTimeInJsonFormat.Year));
         $calendarMainTable.append($calendarHeader);
 
         // from date, to date
@@ -549,7 +549,7 @@
         // روز های ماه پیش
         if (firstWeekDayNumber != 6)
             for (i = firstWeekDayNumber; i >= 0; i--) {
-                $tr.append($('<td data-name="disabled-day" />').html(toPersianNumber(zeroPad(numberOfDaysInPreviousMonth - i))));
+                $tr.append($('<td data-name="disabled-day" />').html(toEnglishNumber(zeroPad(numberOfDaysInPreviousMonth - i))));
                 cellNumber++;
                 tdNumber++;
             }
@@ -563,7 +563,7 @@
                 $tr = $('<tr />');
             }
 
-            var dayNumberInString = toPersianNumber(zeroPad(i)),
+            var dayNumberInString = toEnglishNumber(zeroPad(i)),
                 currentDateNumber = convertToNumber(dateTimeInJsonFormat.Year, dateTimeInJsonFormat.Month, i),
                 $td;
 
@@ -655,7 +655,7 @@
                     $calendarMainTable.append($tr);
                     isTrAppended = true;
                 }
-                $tr.append($('<td data-name="disabled-day" />').html(toPersianNumber(zeroPad(i))));
+                $tr.append($('<td data-name="disabled-day" />').html(toEnglishNumber(zeroPad(i))));
                 tdNumber++;
             }
         }
@@ -666,7 +666,7 @@
         $calendarDivWrapper.append($calendarMainTable);
 
         // عوض کردن عنوان popover
-        $('[data-name="Md-DateTimePicker-Title"]').html(dayOfWeek + '، ' + toPersianNumber(zeroPad(dateTimeInJsonFormat.Day)) + ' ' + persianMonthName + ' ' + toPersianNumber(zeroPad(dateTimeInJsonFormat.Year)));
+        $('[data-name="Md-DateTimePicker-Title"]').html(dayOfWeek + '، ' + toEnglishNumber(zeroPad(dateTimeInJsonFormat.Day)) + ' ' + persianMonthName + ' ' + toEnglishNumber(zeroPad(dateTimeInJsonFormat.Year)));
 
         // آیا محتویات تکس باکس باید تغییر کند ؟
         if (writeDateString) {
@@ -727,7 +727,7 @@
     function isNumber(n) {
         return !isNaN(parseFloat(n)) && isFinite(n);
     }
-    function toPersianNumber(inputNumber1) {
+    function toEnglishNumber(inputNumber1) {
         /* ۰ ۱ ۲ ۳ ۴ ۵ ۶ ۷ ۸ ۹ */
         if (inputNumber1 == undefined) return '';
         var str1 = $.trim(inputNumber1.toString());
