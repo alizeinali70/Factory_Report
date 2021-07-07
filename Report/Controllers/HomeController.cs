@@ -28,6 +28,20 @@ namespace Report.Controllers
         {
             return View();
         }
+        public IActionResult Sign_In(string password)
+        {
+            if (password=="1234")
+            {
+                return Redirect(nameof(Tolid_list));
+            }
+            else
+            {
+               ModelState.AddModelError("","کلمه عبور اشتباه است");
+                return View("Index");
+            }
+
+        }
+
 
         public IActionResult Privacy()
         {
@@ -42,50 +56,91 @@ namespace Report.Controllers
 
         public IActionResult Tolid_list()
         {
-            try
-            {
+            
 
-                var tolid = _homeInterface.FindAll().ToList();
+                PersianCalendar p = new PersianCalendar();
+                DateTime x = DateTime.Now;
+                string y, m, d;
+                y = p.GetYear(x).ToString();
+                m = p.GetMonth(x).ToString();
+                d = p.GetDayOfMonth(x).ToString();
+                if (m.Length < 2) m = "0" + m;
+                if (d.Length < 2) m = "0" + d;
 
-                return View(tolid);
-            }
-            catch (Exception exp)
-            {
+                string Current_date = (y + "/" + m + "/" + d).ToString();
+                var tolid = _homeInterface.FindAll().Where(x => x.tar_f == Current_date).ToList();
 
-                throw;
-            }
-
-
+                return View(tolid);            
         }
 
         public IActionResult Tolid_Details()
         {
+            PersianCalendar p = new PersianCalendar();
+            DateTime x = DateTime.Now;
+            string y, m, d;
+            y = p.GetYear(x).ToString(); 
+            m = p.GetMonth(x).ToString(); 
+            d = p.GetDayOfMonth(x).ToString();
+            if (m.Length <2) m = "0" + m;
+            if (d.Length <2) m = "0" + d;
 
-            var tolid = _homeInterface.FindAll().ToList();
+            string Current_date = (y + "/" + m + "/" + d).ToString();
+            var tolid = _homeInterface.FindAll().Where(x=>x.tar_f== Current_date).ToList();
 
             return View(tolid);
         }
 
         public IActionResult Tolid_Device()
         {
-            var tolid = _homeInterface.FindAll().ToList();
+            PersianCalendar p = new PersianCalendar();
+            DateTime x = DateTime.Now;
+            string y, m, d;
+            y = p.GetYear(x).ToString();
+            m = p.GetMonth(x).ToString();
+            d = p.GetDayOfMonth(x).ToString();
+            if (m.Length < 2) m = "0" + m;
+            if (d.Length < 2) m = "0" + d;
+
+            string Current_date = (y + "/" + m + "/" + d).ToString();
+            var tolid = _homeInterface.FindAll().Where(x => x.tar_f == Current_date).ToList();
 
             return View(tolid);
         }
 
         public IActionResult Tolid_Product()
         {
-            var tolid = _homeInterface.FindAll().ToList();
+            PersianCalendar p = new PersianCalendar();
+            DateTime x = DateTime.Now;
+            string y, m, d;
+            y = p.GetYear(x).ToString();
+            m = p.GetMonth(x).ToString();
+            d = p.GetDayOfMonth(x).ToString();
+            if (m.Length < 2) m = "0" + m;
+            if (d.Length < 2) m = "0" + d;
+
+            string Current_date = (y + "/" + m + "/" + d).ToString();
+            var tolid = _homeInterface.FindAll().Where(x => x.tar_f == Current_date).ToList();
 
             return View(tolid);
         }
 
         public IActionResult Tolid_Stop()
         {
-            var tolid = _homeInterface.FindAll().ToList();
+            PersianCalendar p = new PersianCalendar();
+            DateTime x = DateTime.Now;
+            string y, m, d;
+            y = p.GetYear(x).ToString();
+            m = p.GetMonth(x).ToString();
+            d = p.GetDayOfMonth(x).ToString();
+            if (m.Length < 2) m = "0" + m;
+            if (d.Length < 2) m = "0" + d;
+
+            string Current_date = (y + "/" + m + "/" + d).ToString();
+            var tolid = _homeInterface.FindAll().Where(x => x.tar_f == Current_date).ToList();
 
             return View(tolid);
         }
+
         public IActionResult Search_Tolid_Details(string from, string to)
         {
             IEnumerable<db_data> tolid;

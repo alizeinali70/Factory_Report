@@ -51,7 +51,7 @@
                     </div>
                     <div class="col-md-12 pull-right"></div>
                     <div class="table-responsive table--no-card m-b-30">
-                        <table class="table table-borderless table-data3 table-striped text-center">
+                        <table class="table table-borderless table-data3 table-striped text-right">
                             <thead>
                                 <tr>
                                     <th>ردیف</th>
@@ -106,41 +106,41 @@
                                             <label>@Index</label>
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.tar_f)
+                                            <label>  @Html.DisplayFor(modelItem => item.tar_f)</label>
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.devices.dev_name)
+                                            <label>  @Html.DisplayFor(modelItem => item.devices.dev_name)</label>
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.kalas.kala)
+                                            <label>  @Html.DisplayFor(modelItem => item.kalas.kala)</label>
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.kalas.model)
+                                            <label>  @Html.DisplayFor(modelItem => item.kalas.model)</label>
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.tedad)
+                                            <label>  @Html.DisplayFor(modelItem => item.tedad)</label>
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.tedad_scrap)
+                                            <label>   @Html.DisplayFor(modelItem => item.tedad_scrap)</label>
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.time_mm)
+                                            <label>   @Html.DisplayFor(modelItem => item.time_mm)</label>
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.time_hh)
+                                            <label>  @Html.DisplayFor(modelItem => item.time_hh)</label>
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.time_sleep)
+                                            <label>  @Html.DisplayFor(modelItem => item.time_sleep)</label>
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.shift)
+                                            <label>   @Html.DisplayFor(modelItem => item.shift)</label>
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.model_shift)
+                                            <label>  @Html.DisplayFor(modelItem => item.model_shift)</label>
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.devices.Operator)
-                                        </td>
+                                            <label>  @Html.DisplayFor(modelItem => item.devices.Operator)</label>
+</td>
                                     </tr>
                                     Index++;
                                 }

@@ -30,3 +30,9 @@ a {
     text-decoration: none;
     background-color: transparent;
 }
+th {
+    text-align: center!important;
+}
+td {
+    text-align: center!important;
+}
